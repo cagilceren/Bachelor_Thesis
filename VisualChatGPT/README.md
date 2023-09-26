@@ -1,4 +1,4 @@
-# BachelorArbeit
+# Commands used in this Bachelor Thesis
 - For VQA-GPU: poetry run python visual_chatgpt_VQA.py --load ImageCaptioning_cuda:0,VisualQuestionAnswering_cuda:0 
 - For Segmentation-GPU: poetry run python visual_chatgpt_segment.py --load Text2Box_cuda:0,Segmenting_cuda:0,Inpainting_cuda:0,ImageCaptioning_cuda:0
 
