@@ -25,9 +25,9 @@ if __name__ == '__main__':
         path_l = path.split(',')
         return ','.join([os.path.abspath(os.path.join(base_folder, path)) for path in path_l])
 
-    train_data[image_col] = train_data[image_col].apply(lambda ele: path_expander(ele, base_folder=dataset_path))
-    test_data[image_col] = test_data[image_col].apply(lambda ele: path_expander(ele, base_folder=dataset_path))
-
+    train_data[image_col] = train_data[image_col].apply(lambda ele: path_expander(ele, base_folder=os.path.join(dataset_path, "train")))
+    test_data[image_col] = test_data[image_col].apply(lambda ele: path_expander(ele, base_folder=os.path.join(dataset_path, "test")))
+    
     from autogluon.multimodal import MultiModalPredictor
     predictor = MultiModalPredictor(label=label_col, problem_type="regression").fit(
         train_data=train_data,
